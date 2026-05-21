@@ -278,3 +278,9 @@ Detailed documentation is in `./docs/`:
 ## License
 
 This is a technical assessment project. Not for production use.
+
+---
+
+## Development Acknowledgment
+
+This project was developed with assistance from **Kimi-k2.6** (Moonshot AI), an AI coding assistant that helped with architecture design, implementation, testing, and documentation.
