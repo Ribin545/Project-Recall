@@ -1,0 +1,27 @@
+# --- Generated / runtime data (large or ephemeral) ---
+data/dummy_large_session_history.json
+data/extracted_memories.json
+data/extracted_memories_project_recall.json
+data/chat_history.json
+
+# --- ChromaDB vector stores (rebuilt from extracted_memories) ---
+data/chroma_db/
+data/chroma_project_recall_db/
+
+# --- Python artifacts ---
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# --- Environment ---
+.env
+.venv/
+venv/
+
+# --- IDE / OS ---
+.DS_Store
+.idea/
+.vscode/
+*.swp

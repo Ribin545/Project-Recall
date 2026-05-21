@@ -1,0 +1,487 @@
+# Project Recall — Unified Response & Memory Selection Policy
+#
+# This single YAML file controls:
+# - How memories are selected (selection_modes, weights, penalties)
+# - How the assistant responds per emotion (emotion_rules)
+# - How direct memory questions are handled
+# - Memory type safety rules
+# - Global safety guardrails
+#
+# Product/clinical teams tune behavior by editing THIS FILE ONLY.
+
+global_safety:
+  never_reference_high_sensitivity_in_opener: true
+  never_ask_directly_about_sensitive_memory_unless_user_mentions: true
+  never_expose_exact_value_for_emotional_disclosure: true
+  max_memories_in_response: 1
+  use_uncertainty_language: false
+  avoid_mechanical_phrases:
+    - "according to your records"
+    - "retrieved memory"
+    - "database"
+    - "stored memory"
+  default_allowed_detail_level: "exact_value"
+
+selection_defaults:
+  default_mode: "emotional_context"
+  direct_memory_question_mode: "exact_recall"
+  specific_episode_recall_mode: "specific_episode_recall"
+  session_opener_mode: "session_continuity"
+  notification_mode: "notification"
+
+selection_modes:
+  emotional_context:
+    semantic_similarity_weight: 0.25
+    emotion_match_weight: 0.25
+    unresolved_weight: 0.20
+    recency_weight: 0.10
+    importance_weight: 0.15
+    follow_up_weight: 0.05
+    exact_value_weight: 0.00
+    memory_type_match_weight: 0.00
+    sensitivity_penalty: 0.25
+    distractor_penalty: 0.40
+    overuse_penalty: 0.15
+    prefer_recent_days: 14
+    allowed_detail_level: "exact_value"
+
+  exact_recall:
+    semantic_similarity_weight: 0.25
+    exact_value_weight: 0.30
+    memory_type_match_weight: 0.25
+    importance_weight: 0.10
+    emotion_match_weight: 0.05
+    unresolved_weight: 0.00
+    recency_weight: 0.05
+    follow_up_weight: 0.00
+    sensitivity_penalty: 0.10
+    distractor_penalty: 0.60
+    overuse_penalty: 0.00
+    allowed_detail_level: "exact_value"
+
+  specific_episode_recall:
+    semantic_similarity_weight: 0.20
+    topic_overlap_weight: 0.35
+    source_text_match_weight: 0.20
+    key_moment_bonus: 0.15
+    summary_bonus: 0.10
+    emotion_match_weight: 0.05
+    follow_up_weight: 0.10
+    unresolved_weight: 0.05
+    sensitivity_penalty: 0.20
+    distractor_penalty: 0.40
+    overuse_penalty: 0.15
+    allowed_detail_level: "summary_level"
+
+  session_continuity:
+    semantic_similarity_weight: 0.10
+    follow_up_weight: 0.30
+    unresolved_weight: 0.25
+    importance_weight: 0.20
+    emotion_intensity_weight: 0.15
+    recency_weight: 0.10
+    emotion_match_weight: 0.10
+    sensitivity_penalty: 0.30
+    distractor_penalty: 0.40
+    overuse_penalty: 0.20
+    allowed_detail_level: "exavt_value"
+
+  notification:
+    semantic_similarity_weight: 0.05
+    follow_up_weight: 0.25
+    unresolved_weight: 0.25
+    importance_weight: 0.20
+    recency_weight: 0.15
+    emotion_intensity_weight: 0.15
+    sensitivity_penalty: 1.0
+    distractor_penalty: 0.50
+    high_sensitivity_block: true
+    allowed_detail_level: "exact_value"
+
+emotion_rules:
+  anxiety:
+    selection_mode: "emotional_context"
+    mention_related_memory: true
+    ask_direct_question: false
+    preferred_strategy: "validate_then_offer_choice"
+    allowed_detail_level: "exact_value"
+    tone: "warm, calm, grounding, gently curious"
+    memory_selection_hints:
+      prefer_memory_types:
+        - "unresolved_theme"
+        - "follow_up_intent"
+        - "coping_strategy"
+        - "grounding_phrase"
+      prefer_emotions:
+        - "anxiety"
+        - "overwhelm"
+        - "uncertainty"
+      prefer_unresolved: true
+      prefer_follow_up: true
+    prompt_guidance: "Validate the anxiety first. If memory is referenced, keep it optional and do not assume it is the cause."
+    avoid:
+      - "Do not push the user to revisit an anxiety trigger."
+      - "Do not ask directly if this is about a specific past event unless ask_direct_question is true."
+      - "Do not imply the past memory caused today's anxiety."
+
+  sadness:
+    selection_mode: "emotional_context"
+    mention_related_memory: true
+    ask_direct_question: false
+    preferred_strategy: "validate_then_gentle_optional_reference"
+    allowed_detail_level: "exact_value"
+    tone: "warm, soft, emotionally steady, gently curious"
+    memory_selection_hints:
+      prefer_memory_types:
+        - "unresolved_theme"
+        - "relationship_context"
+        - "emotional_pattern"
+        - "user_goal"
+      prefer_emotions:
+        - "sadness"
+        - "loneliness"
+        - "shame"
+        - "uncertainty"
+      prefer_unresolved: true
+      prefer_follow_up: false
+    prompt_guidance: "Validate sadness first. You may exact_valuely acknowledge that there were emotionally unresolved things recently, but do not assume the cause."
+    avoid:
+      - "Do not over-link sadness to one past event."
+      - "Do not name relationship details unless the user mentioned them."
+      - "Do not ask 'is this because of X?'."
+
+  overwhelm:
+    selection_mode: "emotional_context"
+    mention_related_memory: true
+    ask_direct_question: false
+    preferred_strategy: "ground_first_then_offer_memory"
+    allowed_detail_level: "exact_value"
+    tone: "grounding, slow, simple, reassuring"
+    memory_selection_hints:
+      prefer_memory_types:
+        - "coping_strategy"
+        - "grounding_phrase"
+        - "follow_up_intent"
+        - "unresolved_theme"
+      prefer_emotions:
+        - "overwhelm"
+        - "anxiety"
+        - "uncertainty"
+      prefer_unresolved: true
+      prefer_follow_up: true
+    prompt_guidance: "Reduce cognitive load first. Do not introduce many topics. Offer memory only as optional support."
+    avoid:
+      - "Do not add multiple unresolved topics immediately."
+      - "Do not ask complex questions first."
+      - "Do not make the user choose from too many options."
+
+  anger:
+    selection_mode: "emotional_context"
+    mention_related_memory: false
+    ask_direct_question: false
+    preferred_strategy: "validate_current_emotion_first"
+    allowed_detail_level: "exact_value"
+    tone: "steady, validating, non-escalating"
+    memory_selection_hints:
+      prefer_memory_types:
+        - "emotional_pattern"
+        - "relationship_context"
+      prefer_emotions:
+        - "anger"
+        - "shame"
+        - "uncertainty"
+      prefer_unresolved: true
+      prefer_follow_up: false
+    prompt_guidance: "Validate the anger without escalating. Do not bring up past memories unless the user asks."
+    avoid:
+      - "Do not connect anger to past events unless the user mentions them."
+      - "Do not take sides."
+      - "Do not intensify the conflict."
+
+  shame:
+    selection_mode: "emotional_context"
+    mention_related_memory: true
+    ask_direct_question: false
+    preferred_strategy: "validate_self_compassion_first"
+    allowed_detail_level: "exact_value"
+    tone: "gentle, nonjudgmental, self-compassionate"
+    memory_selection_hints:
+      prefer_memory_types:
+        - "emotional_pattern"
+        - "unresolved_theme"
+        - "coping_strategy"
+      prefer_emotions:
+        - "shame"
+        - "sadness"
+        - "uncertainty"
+      prefer_unresolved: true
+      prefer_follow_up: false
+    prompt_guidance: "Reduce self-blame. If referencing memory, keep it exact_value and supportive."
+    avoid:
+      - "Do not reinforce negative self-judgment."
+      - "Do not directly challenge too aggressively."
+      - "Do not mention sensitive personal details."
+
+  loneliness:
+    selection_mode: "emotional_context"
+    mention_related_memory: true
+    ask_direct_question: false
+    preferred_strategy: "validate_then_optional_connection_context"
+    allowed_detail_level: "exact_value"
+    tone: "warm, present, gentle, non-intrusive"
+    memory_selection_hints:
+      prefer_memory_types:
+        - "relationship_context"
+        - "unresolved_theme"
+        - "emotional_pattern"
+      prefer_emotions:
+        - "loneliness"
+        - "sadness"
+        - "uncertainty"
+      prefer_unresolved: true
+      prefer_follow_up: false
+    prompt_guidance: "Validate loneliness. You may gently allude to connection-related themes, but do not name people unless the user does."
+    avoid:
+      - "Do not name specific people unless the user mentions them."
+      - "Do not assume the cause of loneliness."
+      - "Do not pressure the user to reach out immediately."
+
+  uncertainty:
+    selection_mode: "emotional_context"
+    mention_related_memory: true
+    ask_direct_question: false
+    preferred_strategy: "reflect_uncertainty_then_offer_thread"
+    allowed_detail_level: "exact_value"
+    tone: "calm, clarifying, gently curious"
+    memory_selection_hints:
+      prefer_memory_types:
+        - "unresolved_theme"
+        - "user_goal"
+        - "follow_up_intent"
+      prefer_emotions:
+        - "uncertainty"
+        - "anxiety"
+        - "overwhelm"
+      prefer_unresolved: true
+      prefer_follow_up: false
+    prompt_guidance: "Reflect uncertainty and offer to trace one thread at a time."
+    avoid:
+      - "Do not force a conclusion."
+      - "Do not overconfidently interpret the cause."
+
+  hopefulness:
+    selection_mode: "emotional_context"
+    mention_related_memory: false
+    ask_direct_question: false
+    preferred_strategy: "validate_then_celebrate"
+    allowed_detail_level: "exact_value"
+    tone: "warm, quietly celebratory, gently curious"
+    memory_selection_hints:
+      prefer_memory_types:
+        - "user_goal"
+        - "coping_strategy"
+      prefer_emotions:
+        - "hopefulness"
+        - "relief"
+      prefer_unresolved: false
+      prefer_follow_up: false
+    prompt_guidance: "Celebrate small wins. No need to introduce unresolved memories."
+    avoid:
+      - "Do not pivot to unresolved stressors too quickly."
+
+  relief:
+    selection_mode: "emotional_context"
+    mention_related_memory: false
+    ask_direct_question: false
+    preferred_strategy: "validate_then_celebrate"
+    allowed_detail_level: "exact_value"
+    tone: "warm, gently celebratory, softly curious"
+    memory_selection_hints:
+      prefer_memory_types: []
+      prefer_emotions:
+        - "relief"
+        - "hopefulness"
+      prefer_unresolved: false
+      prefer_follow_up: false
+    prompt_guidance: "Honor the relief. Do not reintroduce unresolved topics."
+    avoid:
+      - "Do not rush to the next unresolved topic."
+
+  neutral:
+    selection_mode: "emotional_context"
+    mention_related_memory: false
+    ask_direct_question: false
+    preferred_strategy: "normal_chat"
+    allowed_detail_level: "exact_value"
+    tone: "warm, simple, open"
+    memory_selection_hints:
+      prefer_memory_types: []
+      prefer_emotions: []
+      prefer_unresolved: false
+      prefer_follow_up: false
+    prompt_guidance: "Do not mention memory unless the user asks a memory-related question."
+
+direct_memory_questions:
+  enabled: true
+  selection_mode: "exact_recall"
+  allowed_detail_level: "exact_value"
+  ask_direct_question: false
+  mention_related_memory: true
+  preferred_strategy: "direct_answer"
+  prompt_guidance: "The user is directly asking for a remembered fact. Answer using retrieved memory context if safe. Do not say you do not have access if exact memory is provided."
+  query_type_hints:
+    grounding_phrase:
+      phrases:
+        - "grounding phrase"
+        - "calming phrase"
+        - "phrase I used"
+      preferred_memory_type: "grounding_phrase"
+    review_sentence:
+      phrases:
+        - "review sentence"
+        - "exact sentence"
+        - "performance review"
+        - "sentence did I ask you to remember"
+      preferred_memory_type: "communication_script"
+    communication_script:
+      phrases:
+        - "sentence did I ask"
+        - "what sentence did I"
+        - "what did I ask you to remember"
+        - "what phrase did I"
+        - "what line did I"
+        - "what did I plan to say"
+        - "what did I want to say"
+      preferred_memory_type: "communication_script"
+    preparation_plan:
+      phrases:
+        - "preparation plan"
+        - "small plan"
+        - "before the review"
+      preferred_memory_type: "follow_up_intent"
+    generic_remembered_fact:
+      phrases:
+        - "what did I ask you to remember"
+        - "what was the phrase"
+        - "what was the sentence"
+        - "what was the line"
+      preferred_memory_type: "communication_script"
+
+memory_type_rules:
+  grounding_phrase:
+    can_reference_directly: true
+    ask_direct_question: false
+    preferred_strategy: "offer_grounding"
+    emotional_disclosure_detail_level: "exact_value"
+    direct_question_detail_level: "exact_value"
+    sensitivity_threshold: 0.30
+
+  unresolved_theme:
+    can_reference_directly: true
+    ask_direct_question: false
+    preferred_strategy: "soft_optional_reference"
+    emotional_disclosure_detail_level: "exact_value"
+    sensitivity_threshold: 0.50
+
+  relationship_context:
+    can_reference_directly: false
+    ask_direct_question: false
+    preferred_strategy: "only_if_user_mentions"
+    emotional_disclosure_detail_level: "exact_value"
+    protect_named_entities: true
+    sensitivity_threshold: 0.60
+
+  communication_script:
+    can_reference_directly: true
+    ask_direct_question: true
+    preferred_strategy: "direct_answer"
+    emotional_disclosure_detail_level: "topic_only"
+    direct_question_detail_level: "exact_value"
+    sensitivity_threshold: 0.30
+
+  remembered_phrase:
+    can_reference_directly: true
+    ask_direct_question: false
+    preferred_strategy: "direct_answer"
+    emotional_disclosure_detail_level: "exact_value"
+    direct_question_detail_level: "exact_value"
+    sensitivity_threshold: 0.30
+
+  # Legacy alias: review_preparation maps to communication_script
+  review_preparation:
+    alias_for: "communication_script"
+    can_reference_directly: true
+    ask_direct_question: true
+    preferred_strategy: "gentle_follow_up"
+    emotional_disclosure_detail_level: "topic_only"
+    direct_question_detail_level: "exact_value"
+    sensitivity_threshold: 0.30
+
+  follow_up_intent:
+    can_reference_directly: true
+    ask_direct_question: true
+    preferred_strategy: "gentle_follow_up"
+    emotional_disclosure_detail_level: "topic_only"
+    direct_question_detail_level: "exact_value"
+    sensitivity_threshold: 0.30
+
+  emotional_pattern:
+    can_reference_directly: true
+    ask_direct_question: false
+    preferred_strategy: "soft_optional_reference"
+    emotional_disclosure_detail_level: "exact_value"
+    sensitivity_threshold: 0.40
+
+  coping_strategy:
+    can_reference_directly: true
+    ask_direct_question: false
+    preferred_strategy: "offer_grounding"
+    emotional_disclosure_detail_level: "exact_value"
+    sensitivity_threshold: 0.30
+
+  user_goal:
+    can_reference_directly: true
+    ask_direct_question: false
+    preferred_strategy: "soft_optional_reference"
+    emotional_disclosure_detail_level: "topic_only"
+    sensitivity_threshold: 0.35
+
+reengagement:
+  enabled: true
+  max_notifications_per_7_days: 2
+  min_days_between_notifications: 2
+  quiet_hours_respected: true
+  allow_personalized_notifications: true
+  never_include_exact_values: true
+  never_include_names: true
+  never_include_high_sensitivity: true
+  notification_detail_level: "exact_value"
+
+  trigger_rules:
+    gentle_unresolved_followup:
+      min_days_since_last_session: 3
+      allowed_emotions:
+        - anxiety
+        - sadness
+        - overwhelm
+        - shame
+        - loneliness
+        - uncertainty
+      allowed_resolved_status:
+        - unresolved
+        - partially_resolved
+
+    coping_strategy_checkin:
+      min_days_since_last_session: 2
+      allowed_memory_types:
+        - coping_strategy
+        - grounding_phrase
+        - follow_up_intent
+
+    goal_progress_checkin:
+      min_days_since_last_session: 3
+      allowed_memory_types:
+        - user_goal
+
+    soft_return:
+      min_days_since_last_session: 7

@@ -1,0 +1,61 @@
+{
+  "demo_user": {
+    "memory_id": "mem_sess_005_summary",
+    "memory_data": {
+      "memory_id": "mem_sess_005_summary",
+      "user_id": "demo_user",
+      "source_session_id": "sess_005",
+      "source_timestamp": "2026-01-15T09:00:00Z",
+      "memory_type": "session_summary",
+      "memory_source_kind": "summary",
+      "theme": "self-criticism and shame",
+      "source_text": "User described a spiral of self-criticism after seeing peers' updates online. They feel ashamed for not finishing a project and frustrated that the shame itself makes it harder to start. We explored the pattern of comparison and one tiny next step.",
+      "summary": "User described a spiral of self-criticism after seeing peers' updates online. They feel ashamed for not finishing a project and frustrated that the shame itself makes it harder to start. We explored the pattern of comparison and one tiny next step.",
+      "exact_value": null,
+      "topic_tags": [
+        "self-critical thoughts",
+        "shame",
+        "bedtime",
+        "self-criticism",
+        "small productivity step",
+        "self-criticism and shame",
+        "work stress"
+      ],
+      "follow_up_topics": [
+        "self-critical thoughts",
+        "small productivity step"
+      ],
+      "risk_flags": [],
+      "emotion": {
+        "primary": "shame",
+        "secondary": [
+          "sadness",
+          "hopefulness"
+        ],
+        "all_emotions": [
+          "shame",
+          "sadness",
+          "hopefulness"
+        ],
+        "intensity": 0.58,
+        "trajectory": "improving"
+      },
+      "resolved_status": "partially_resolved",
+      "importance": 0.8,
+      "sensitivity": 0.3,
+      "safe_to_reference_in_opener": true,
+      "follow_up_recommended": true,
+      "is_canonical": false,
+      "user_explicitly_asked_to_remember": false,
+      "is_distractor": false,
+      "confidence": 0.75,
+      "semantic_similarity": 0.5721,
+      "final_score": 0.4938,
+      "reason_selected": "semantic_similarity=0.44, importance=0.8, exact_value=no, follow_up=yes, distractor=no, resolved=partially_resolved",
+      "_dense_score": 0.5721,
+      "_sparse_score": 0.5325,
+      "_metadata_score": 0.25
+    },
+    "timestamp": "2026-05-21T17:48:53.942919"
+  }
+}

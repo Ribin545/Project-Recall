@@ -1,0 +1,252 @@
+[
+  {
+    "user_id": "demo_user",
+    "session_id": "sess_001",
+    "timestamp": "2026-01-03T09:00:00Z",
+    "theme": "work stress and burnout",
+    "emotional_tone": [
+      "anxious",
+      "overwhelmed",
+      "hopeful"
+    ],
+    "key_moments": [
+      "User reported panic before meetings",
+      "User discussed a grounding exercise before stressful work calls",
+      "User committed to a 10-minute no-phone wind-down routine"
+    ],
+    "summary": "User described increasing stress from back-to-back deadlines. They noticed heart racing before weekly stand-ups. We explored a breathing pattern and a short wind-down window after work. The session ended with a small commitment to try the routine.",
+    "risk_flags": [
+      "high_stress"
+    ],
+    "follow_up_topics": [
+      "sleep hygiene",
+      "grounding exercise"
+    ]
+  },
+  {
+    "user_id": "demo_user",
+    "session_id": "sess_002",
+    "timestamp": "2026-01-06T09:00:00Z",
+    "theme": "sleep and overthinking",
+    "emotional_tone": [
+      "tired",
+      "overwhelmed",
+      "hopeful"
+    ],
+    "key_moments": [
+      "User has been waking at 2 AM with looping thoughts",
+      "User discussed a dim-lights wind-down and writing tomorrow's top three tasks before bed",
+      "User committed to try the routine for three nights and notice what happens"
+    ],
+    "summary": "User has been waking at 2 AM with looping thoughts about unfinished work. They feel frustrated because tiredness bleeds into the next day. We discussed a dim-lights wind-down and writing tomorrow's top three tasks before bed.",
+    "risk_flags": [
+      "sleep_disruption"
+    ],
+    "follow_up_topics": [
+      "no-phone wind-down",
+      "sleep hygiene"
+    ]
+  },
+  {
+    "user_id": "demo_user",
+    "session_id": "sess_003",
+    "timestamp": "2026-01-09T09:00:00Z",
+    "theme": "family boundaries",
+    "emotional_tone": [
+      "anxious",
+      "uncertain",
+      "hopeful"
+    ],
+    "key_moments": [
+      "User wanted to remember the sentence: \"I need some space, but I still care about you.\" for a conversation with their brother.",
+      "User felt guilty about setting boundaries",
+      "User committed to sleep routine"
+    ],
+    "summary": "User discussed family boundaries and wants to set limits with their brother. They feel guilty but also hopeful. They found a sentence that felt honest and kind and want to remember it.",
+    "risk_flags": [],
+    "follow_up_topics": [
+      "brother conversation",
+      "boundary setting"
+    ]
+  },
+  {
+    "user_id": "demo_user",
+    "session_id": "sess_004",
+    "timestamp": "2026-01-12T09:00:00Z",
+    "theme": "friendship conflict",
+    "emotional_tone": [
+      "hurt",
+      "uncertain",
+      "hopeful"
+    ],
+    "key_moments": [
+      "User planned to say: \"I felt hurt, but I want to understand what happened.\" to a friend.",
+      "User is worried the friendship might end",
+      "User wants to apologize but also explain their feelings"
+    ],
+    "summary": "User is navigating a difficult conversation with a friend after a misunderstanding. They found a sentence that feels honest and kind and want to remember it for when they feel ready to talk.",
+    "risk_flags": [],
+    "follow_up_topics": [
+      "friendship repair",
+      "apology script"
+    ]
+  },
+  {
+    "user_id": "demo_user",
+    "session_id": "sess_005",
+    "timestamp": "2026-01-15T09:00:00Z",
+    "theme": "self-criticism and shame",
+    "emotional_tone": [
+      "ashamed",
+      "discouraged",
+      "hopeful"
+    ],
+    "key_moments": [
+      "User described a spiral of self-criticism after seeing peers' updates online",
+      "User feels ashamed for not finishing a project and frustrated that the shame makes it harder to start",
+      "User committed to fifteen minutes of focused work with no outcome judgment"
+    ],
+    "summary": "User described a spiral of self-criticism after seeing peers' updates online. They feel ashamed for not finishing a project and frustrated that the shame itself makes it harder to start. We explored the pattern of comparison and one tiny next step.",
+    "risk_flags": [],
+    "follow_up_topics": [
+      "self-critical thoughts",
+      "small productivity step"
+    ]
+  },
+  {
+    "user_id": "demo_user",
+    "session_id": "sess_006",
+    "timestamp": "2026-01-18T09:00:00Z",
+    "theme": "loneliness and social disconnection",
+    "emotional_tone": [
+      "lonely",
+      "discouraged",
+      "hopeful"
+    ],
+    "key_moments": [
+      "User described loneliness even after spending time around people",
+      "User feels disconnected and wonders if something is wrong with them",
+      "User committed to one vulnerable share with their partner this week"
+    ],
+    "summary": "User described loneliness even after spending time around people. They feel disconnected and wonder if something is wrong with them. We explored the difference between being alone and feeling alone. They chose one vulnerable share with their partner this week.",
+    "risk_flags": [],
+    "follow_up_topics": [
+      "loneliness check-in",
+      "social outreach"
+    ]
+  },
+  {
+    "user_id": "demo_user",
+    "session_id": "sess_007",
+    "timestamp": "2026-01-21T09:00:00Z",
+    "theme": "manager conversation",
+    "emotional_tone": [
+      "nervous",
+      "overwhelmed",
+      "relieved"
+    ],
+    "key_moments": [
+      "User wanted to use the sentence: \"I'd like to understand how I can grow from here.\" in a performance review conversation.",
+      "User rehearsed the sentence and reported that the grounding phrase helped during a practice conversation",
+      "User updated their preparation plan slightly"
+    ],
+    "summary": "User came in nervous about the upcoming performance review. They had rehearsed the sentence they wanted to use and reported that the grounding phrase helped during a practice conversation with a trusted colleague. They updated their preparation plan slightly. The session ended with a sense of mild relief and readiness.",
+    "risk_flags": [
+      "high_stress"
+    ],
+    "follow_up_topics": [
+      "performance review",
+      "grounding exercise"
+    ]
+  },
+  {
+    "user_id": "demo_user",
+    "session_id": "sess_008",
+    "timestamp": "2026-01-24T09:00:00Z",
+    "theme": "productivity pressure",
+    "emotional_tone": [
+      "discouraged",
+      "frustrated",
+      "hopeful"
+    ],
+    "key_moments": [
+      "User feels behind and inadequate compared to peers",
+      "User chose the grounding phrase: \"steady river, small lantern\"",
+      "User committed to curating their feed and setting app time limits"
+    ],
+    "summary": "User described comparing themselves to others online and feeling behind and inadequate. We explored curating their feed and setting app time limits. They committed to one unfollow of an account that triggers comparison.",
+    "risk_flags": [],
+    "follow_up_topics": [
+      "self-critical thoughts",
+      "small productivity step"
+    ]
+  },
+  {
+    "user_id": "demo_user",
+    "session_id": "sess_009",
+    "timestamp": "2026-01-27T09:00:00Z",
+    "theme": "emotional regulation",
+    "emotional_tone": [
+      "anxious",
+      "overwhelmed",
+      "calm"
+    ],
+    "key_moments": [
+      "User reported difficulty with emotional regulation before important events",
+      "User planned to walk for ten minutes, then write three calm bullet points before the review",
+      "User committed to try the preparation plan before the next important event"
+    ],
+    "summary": "User reported difficulty with emotional regulation before important events. They planned to walk for ten minutes, then write three calm bullet points before the review. They committed to try the preparation plan before the next important event and notice what shifts.",
+    "risk_flags": [],
+    "follow_up_topics": [
+      "decision next step",
+      "small productivity step"
+    ]
+  },
+  {
+    "user_id": "demo_user",
+    "session_id": "sess_010",
+    "timestamp": "2026-01-30T09:00:00Z",
+    "theme": "emotional regulation",
+    "emotional_tone": [
+      "uncertain",
+      "anxious",
+      "calm"
+    ],
+    "key_moments": [
+      "User described tension that escalated during a family dinner",
+      "User felt unheard and withdrew",
+      "User committed to one gentle conversation before the next gathering"
+    ],
+    "summary": "User described tension that escalated during a family dinner. They felt unheard and withdrew. We explored communication styles and practiced 'I feel... when... because...' language. They committed to one gentle conversation before the next gathering.",
+    "risk_flags": [],
+    "follow_up_topics": [
+      "boundary practice",
+      "communication skills"
+    ]
+  },
+  {
+    "user_id": "demo_user",
+    "session_id": "sess_011",
+    "timestamp": "2026-02-02T09:00:00Z",
+    "theme": "sleep hygiene",
+    "emotional_tone": [
+      "tired",
+      "discouraged",
+      "relieved"
+    ],
+    "key_moments": [
+      "User reported panic before bedtime",
+      "User chose a grounding phrase: 'Quiet room, soft blanket, slow breath.'",
+      "User wants to try a no-phone wind-down routine"
+    ],
+    "summary": "User struggles with sleep due to anxiety and wants to build a calming bedtime routine. They chose a grounding phrase and want to try a no-phone wind-down routine.",
+    "risk_flags": [
+      "sleep_disruption"
+    ],
+    "follow_up_topics": [
+      "no-phone wind-down",
+      "bedtime routine"
+    ]
+  }
+]

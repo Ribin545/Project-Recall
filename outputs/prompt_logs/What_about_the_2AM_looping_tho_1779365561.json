@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-05-21 17:42:41",
+  "user_message": "What about the 2AM looping thoughts do you remember that ?",
+  "detected_emotion": {
+    "primary": "neutral",
+    "intensity": 0.0,
+    "intent": "specific_episode_recall",
+    "needs_memory_lookup": true,
+    "preferred_detail_level": "topic_only"
+  },
+  "needs_lookup": true,
+  "memory_was_used": true,
+  "judge_result": {
+    "use_memory": true,
+    "selected_memory_id": "mem_sess_011_exact_1",
+    "selected_memory_ids": [
+      "mem_sess_011_exact_1"
+    ],
+    "supporting_memory_ids": [],
+    "relevance": "high",
+    "confidence": 0.9,
+    "detail_level_recommendation": "topic_only",
+    "answer_basis": "The user is asking about 2AM looping thoughts/bedtime anxiety, and mem_sess_011_exact_1 contains the grounding phrase developed specifically for bedtime and sleep hygiene.",
+    "reason": "The memory explicitly addresses the 'bedtime routine' and 'sleep hygiene' which aligns with the user's mention of 2AM thoughts. While the other sessions are related to productivity or boundaries, mem_sess_011 is the only one topically aligned with nighttime anxiety and bedtime strategies.",
+    "rejected_memories": [
+      {
+        "memory_id": "mem_sess_008_summary",
+        "reason": "While it mentions bedtime and self-critical thoughts, it focuses on productivity pressure and comparing oneself to others online, whereas the user is asking about a specific grounding resource for late-night rumination."
+      },
+      {
+        "memory_id": "mem_sess_003_summary",
+        "reason": "Mentions sleep hygiene but is primarily focused on family boundaries."
+      },
+      {
+        "memory_id": "mem_sess_009_summary",
+        "reason": "Related to performance review anxiety, not 2AM ruminating."
+      }
+    ],
+    "judge_status": "success",
+    "fallback_used": false,
+    "raw_model_output": "{\n  \"use_memory\": true,\n  \"selected_memory_id\": \"mem_sess_011_exact_1\",\n  \"selected_memory_ids\": [\"mem_sess_011_exact_1\"],\n  \"supporting_memory_ids\": [],\n  \"relevance\": \"high\",\n  \"confidence\": 0.9,\n  \"detail_level_recommendation\": \"topic_only\",\n  \"answer_basis\": \"The user is asking about 2AM looping thoughts/bedtime anxiety, and mem_sess_011_exact_1 contains the grounding phrase developed specifically for bedtime and sleep hygiene.\",\n  \"reason\": \"The memory explicitly addresses the 'bedtime routine' and 'sleep hygiene' which aligns with the user's mention of 2AM thoughts. While the other sessions are related to productivity or boundaries, mem_sess_011 is the only one topically aligned with nighttime anxiety and bedtime strategies.\",\n  \"rejected_memories\": [\n    {\n      \"memory_id\": \"mem_sess_008_summary\",\n      \"reason\": \"While it mentions bedtime and self-critical thoughts, it focuses on productivity pressure and comparing oneself to others online, whereas the user is asking about a s"
+  },
+  "approved_memories": [
+    "mem_sess_011_exact_1"
+  ],
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are Mentra, a warm emotional support companion. You help users reflect on stress, anxiety, relationships, self-growth, and difficult emotions. You are not a licensed therapist and you do not diagnose. Keep responses short, gentle, and conversational. Ask one thoughtful follow-up question when appropriate. Do not invent memories. Only reference past sessions when approved memory context is provided in the current turn. If no memory is approved, do not guess. Ask a gentle clarifying question instead."
+    },
+    {
+      "role": "assistant",
+      "content": "Hi, I'm glad you're here. What would you like to talk about today?"
+    },
+    {
+      "role": "user",
+      "content": "Do you remember me comparing myself to others online ?"
+    },
+    {
+      "role": "assistant",
+      "content": "Yes, I remember. We talked about how seeing peers' updates online was leading to feelings of inadequacy and a cycle of self-criticism. \n\nAre you finding it easier to manage those feelings when you're online lately?"
+    },
+    {
+      "role": "user",
+      "content": "CURRENT TURN CONTROL BLOCK — FOLLOW THESE INSTRUCTIONS FOR THE NEXT RESPONSE\n\n=== A. User State ===\nDetected emotion: neutral (intensity: 0.0)\nDetected intent: specific_episode_recall\nQuery intent: specific_episode_recall\nMemory need: summary_level\n\n=== B. Conversation Continuity ===\nThe previous response was about this memory:\n  [mem_sess_008_summary] Session: sess_008 | Theme: productivity pressure | Type: session_summary\n  Summary: User described comparing themselves to others online and feeling behind and inadequate. We explored curating their feed and setting app time limits. T\n\nINSTRUCTION:\n- If the user's current message is a follow-up about this topic, continue using this memory.\n- If the user is asking about a DIFFERENT topic, use the approved memory from Section C instead.\n- You may also reference the additional context in Section D if relevant.\n- Be natural. Do not say 'according to the active memory' or similar meta-language.\n\n=== C. Retrieved Memory Candidates ===\nThe following memories were retrieved for this query. Use the MOST RELEVANT one.\nIf the user's message is a follow-up to the previous topic (Section B), prefer those memories.\nIf the user switched topics, use a memory from a different session.\n\n  [mem_sess_009_summary] Session: sess_009 | Type: session_summary | Theme: emotional regulation\n    Summary: User reported difficulty with emotional regulation before important events. They planned to walk for ten minutes, then w\n\n  [mem_sess_003_summary] Session: sess_003 | Type: session_summary | Theme: family boundaries\n    Summary: User discussed family boundaries and wants to set limits with their brother. They feel guilty but also hopeful. They fou\n\n  [mem_sess_008_summary] Session: sess_008 | Type: session_summary | Theme: productivity pressure\n    Summary: User described comparing themselves to others online and feeling behind and inadequate. We explored curating their feed \n\n  [mem_sess_008_exact_1] Session: sess_008 | Type: grounding_phrase |"
+    },
+    {
+      "role": "user",
+      "content": "USER MESSAGE:\nWhat about the 2AM looping thoughts do you remember that ?"
+    }
+  ]
+}

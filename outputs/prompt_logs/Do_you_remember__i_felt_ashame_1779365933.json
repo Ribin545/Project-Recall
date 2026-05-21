@@ -1,0 +1,97 @@
+{
+  "timestamp": "2026-05-21 17:48:53",
+  "user_message": "Do you remember? i felt ashamed for not finish a project ?",
+  "detected_emotion": {
+    "primary": "shame",
+    "intensity": 0.57,
+    "intent": "direct_memory_question",
+    "needs_memory_lookup": true
+  },
+  "needs_lookup": true,
+  "memory_was_used": true,
+  "judge_result": {
+    "use_memory": true,
+    "selected_memory_id": "mem_sess_005_summary",
+    "selected_memory_ids": [
+      "mem_sess_005_summary"
+    ],
+    "supporting_memory_ids": [
+      "mem_sess_005_km_2"
+    ],
+    "relevance": "high",
+    "confidence": 0.95,
+    "detail_level_recommendation": "summary_level",
+    "answer_basis": "Remind the user of the session where we explored feelings of shame regarding an unfinished project and the goal of focused work without judgment.",
+    "reason": "Memory mem_sess_005_summary explicitly describes the user feeling ashamed for not finishing a project, which directly matches the user's recall question. mem_sess_005_km_2 provides the specific plan/strategy discussed during that same context.",
+    "rejected_memories": [
+      {
+        "memory_id": "mem_sess_009_exact_1",
+        "reason": "Topically about performance review preparation, not the specific feeling of shame regarding an unfinished project discussed in session 5."
+      },
+      {
+        "memory_id": "mem_sess_007_exact_0",
+        "reason": "Topically about a performance review communication script, not the shame about unfinished work."
+      },
+      {
+        "memory_id": "mem_sess_003_exact_0",
+        "reason": "Unrelated topic (family boundaries)."
+      },
+      {
+        "memory_id": "mem_sess_004_exact_0",
+        "reason": "Unrelated topic (friendship conflict)."
+      },
+      {
+        "memory_id": "mem_sess_008_exact_1",
+        "reason": "Unrelated topic (productivity grounding phrase)."
+      },
+      {
+        "memory_id": "mem_sess_011_exact_1",
+        "reason": "Unrelated topic (sleep hygiene)."
+      }
+    ],
+    "judge_status": "success",
+    "fallback_used": false,
+    "raw_model_output": "{\n  \"use_memory\": true,\n  \"selected_memory_id\": \"mem_sess_005_summary\",\n  \"selected_memory_ids\": [\"mem_sess_005_summary\"],\n  \"supporting_memory_ids\": [\"mem_sess_005_km_2\"],\n  \"relevance\": \"high\",\n  \"confidence\": 0.95,\n  \"detail_level_recommendation\": \"summary_level\",\n  \"answer_basis\": \"Remind the user of the session where we explored feelings of shame regarding an unfinished project and the goal of focused work without judgment.\",\n  \"reason\": \"Memory mem_sess_005_summary explicitly describes the user feeling ashamed for not finishing a project, which directly matches the user's recall question. mem_sess_005_km_2 provides the specific plan/strategy discussed during that same context.\",\n  \"rejected_memories\": [\n    {\n      \"memory_id\": \"mem_sess_009_exact_1\",\n      \"reason\": \"Topically about performance review preparation, not the specific feeling of shame regarding an unfinished project discussed in session 5.\"\n    },\n    {\n      \"memory_id\": \"mem_sess_007_exact_0\",\n      \"reason\": \"Top"
+  },
+  "approved_memories": [
+    "mem_sess_005_summary"
+  ],
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are Mentra, a warm emotional support companion. You help users reflect on stress, anxiety, relationships, self-growth, and difficult emotions. You are not a licensed therapist and you do not diagnose. Keep responses short, gentle, and conversational. Ask one thoughtful follow-up question when appropriate. Do not invent memories. Only reference past sessions when approved memory context is provided in the current turn. If no memory is approved, do not guess. Ask a gentle clarifying question instead."
+    },
+    {
+      "role": "user",
+      "content": "Do you remember about me navigating a difficult conversation with a friend"
+    },
+    {
+      "role": "assistant",
+      "content": "Yes, I remember that we discussed navigating a difficult conversation with a friend where you were balancing explaining your feelings while also wanting to apologize for your part in the misunderstanding. We worked on the phrase, \"I felt hurt, but I want to understand what happened,\" to help you approach that talk with clarity.\n\nHow has that situation felt for you since you planned out those words?"
+    },
+    {
+      "role": "user",
+      "content": "During that situation do you remember what i planned to say ?"
+    },
+    {
+      "role": "assistant",
+      "content": "I remember that you planned to say, \"I felt hurt, but I want to understand what happened.\" \n\nDoes that sentence still feel like a helpful way for you to open that conversation, or has your perspective on what you need to express changed since we last talked about it?"
+    },
+    {
+      "role": "user",
+      "content": "Sometimes i feel ashamed"
+    },
+    {
+      "role": "assistant",
+      "content": "It is very human to feel that weight of shame, especially when we are reflecting on moments of conflict or vulnerability with people we care about. Often, shame tries to convince us that we are the problem, rather than just someone going through a difficult situation.\n\nWhen those feelings of shame come up, do you find they are mostly about how you handled the conversation, or is it more about the fear of how the friendship might be changed?"
+    },
+    {
+      "role": "user",
+      "content": "CURRENT TURN CONTROL BLOCK — FOLLOW THESE INSTRUCTIONS FOR THE NEXT RESPONSE\n\n=== A. User State ===\nDetected emotion: shame (intensity: 0.57)\nDetected intent: direct_memory_question\nQuery intent: specific_episode_recall\nMemory need: summary_level\n\n=== B. Conversation Continuity ===\nThe previous response was about this memory:\n  [mem_sess_004_exact_0] Session: sess_004 | Theme: friendship conflict | Type: communication_script\n  Exact value: \"I felt hurt, but I want to understand what happened.\"\n  Summary: User planned to say: \"I felt hurt, but I want to understand what happened.\" to a friend.\n\nINSTRUCTION:\n- If the user's current message is a follow-up about this topic, continue using this memory.\n- If the user is asking about a DIFFERENT topic, use the approved memory from Section C instead.\n- You may also reference the additional context in Section D if relevant.\n- Be natural. Do not say 'according to the active memory' or similar meta-language.\n\n=== C. Retrieved Memory Candidates ===\nThe following memories were retrieved for this query. Use the MOST RELEVANT one.\nIf the user's message is a follow-up to the previous topic (Section B), prefer those memories.\nIf the user switched topics, use a memory from a different session.\n\n  [mem_sess_009_exact_1] Session: sess_009 | Type: coping_strategy | Theme: emotional regulation\n    Exact: \"walk for ten minutes, then write three calm bullet points before the review\"\n    Summary: User planned to walk for ten minutes, then write three calm bullet points before the review\n\n  [mem_sess_003_exact_0] Session: sess_003 | Type: communication_script | Theme: family boundaries\n    Exact: \"I need some space, but I still care about you.\"\n    Summary: User wanted to remember the sentence: \"I need some space, but I still care about you.\" for a conversation with their bro\n\n  [mem_sess_005_summary] Session: sess_005 | Type: session_summary | Theme: self-criticism and shame\n    Summary: User described a spiral of self-criticism after seeing"
+    },
+    {
+      "role": "user",
+      "content": "USER MESSAGE:\nDo you remember? i felt ashamed for not finish a project ?"
+    }
+  ]
+}

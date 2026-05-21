@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-05-21 17:41:46",
+  "user_message": "Do you remember me comparing myself to others online ?",
+  "detected_emotion": {
+    "primary": "neutral",
+    "intensity": 0.0,
+    "intent": "direct_memory_question",
+    "needs_memory_lookup": true
+  },
+  "needs_lookup": true,
+  "memory_was_used": true,
+  "judge_result": {
+    "use_memory": true,
+    "selected_memory_id": "mem_sess_008_summary",
+    "selected_memory_ids": [
+      "mem_sess_008_summary"
+    ],
+    "supporting_memory_ids": [
+      "mem_sess_005_summary"
+    ],
+    "relevance": "high",
+    "confidence": 0.95,
+    "detail_level_recommendation": "summary_level",
+    "answer_basis": "The user is asking about a specific pattern of behavior (comparing themselves to others online). Two session summaries document this topic: Session 8 (which mentions setting time limits and unfollowing) and Session 5 (which mentions feeling ashamed after seeing peers' updates).",
+    "reason": "The user is explicitly asking about the topic of comparing themselves to others online. Session 8 summary directly addresses the comparison behavior and the strategies discussed. Session 5 provides additional relevant context regarding the user's emotional experience (shame) associated with the same behavior.",
+    "rejected_memories": [
+      {
+        "memory_id": "mem_sess_003_exact_0",
+        "reason": "Unrelated topic: family boundaries."
+      },
+      {
+        "memory_id": "mem_sess_004_exact_0",
+        "reason": "Unrelated topic: friendship conflict."
+      },
+      {
+        "memory_id": "mem_sess_007_exact_0",
+        "reason": "Unrelated topic: manager conversation."
+      },
+      {
+        "memory_id": "mem_sess_009_exact_1",
+        "reason": "Unrelated topic: performance review strategy."
+      },
+      {
+        "memory_id": "mem_sess_008_exact_1",
+        "reason": "This is a grounding phrase, not the topic of comparison itself."
+      },
+      {
+        "memory_id": "mem_sess_011_exact_1",
+        "reason": "Unrelated topic: sleep hygiene."
+      }
+    ],
+    "judge_status": "success",
+    "fallback_used": false,
+    "raw_model_output": "{\n  \"use_memory\": true,\n  \"selected_memory_id\": \"mem_sess_008_summary\",\n  \"selected_memory_ids\": [\n    \"mem_sess_008_summary\"\n  ],\n  \"supporting_memory_ids\": [\n    \"mem_sess_005_summary\"\n  ],\n  \"relevance\": \"high\",\n  \"confidence\": 0.95,\n  \"detail_level_recommendation\": \"summary_level\",\n  \"answer_basis\": \"The user is asking about a specific pattern of behavior (comparing themselves to others online). Two session summaries document this topic: Session 8 (which mentions setting time limits and unfollowing) and Session 5 (which mentions feeling ashamed after seeing peers' updates).\",\n  \"reason\": \"The user is explicitly asking about the topic of comparing themselves to others online. Session 8 summary directly addresses the comparison behavior and the strategies discussed. Session 5 provides additional relevant context regarding the user's emotional experience (shame) associated with the same behavior.\",\n  \"rejected_memories\": [\n    {\n      \"memory_id\": \"mem_sess_003_exact_0\",\n      \"reason"
+  },
+  "approved_memories": [
+    "mem_sess_008_summary"
+  ],
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are Mentra, a warm emotional support companion. You help users reflect on stress, anxiety, relationships, self-growth, and difficult emotions. You are not a licensed therapist and you do not diagnose. Keep responses short, gentle, and conversational. Ask one thoughtful follow-up question when appropriate. Do not invent memories. Only reference past sessions when approved memory context is provided in the current turn. If no memory is approved, do not guess. Ask a gentle clarifying question instead."
+    },
+    {
+      "role": "assistant",
+      "content": "Hi, I'm glad you're here. What would you like to talk about today?"
+    },
+    {
+      "role": "user",
+      "content": "CURRENT TURN CONTROL BLOCK — FOLLOW THESE INSTRUCTIONS FOR THE NEXT RESPONSE\n\n=== A. User State ===\nDetected emotion: neutral (intensity: 0.0)\nDetected intent: direct_memory_question\nQuery intent: direct_exact_recall\nMemory need: topic_only\n\n=== C. Retrieved Memory Candidates ===\nThe following memories were retrieved for this query. Use the MOST RELEVANT one.\nIf the user's message is a follow-up to the previous topic (Section B), prefer those memories.\nIf the user switched topics, use a memory from a different session.\n\n  [mem_sess_003_exact_0] Session: sess_003 | Type: communication_script | Theme: family boundaries\n    Exact: \"I need some space, but I still care about you.\"\n    Summary: User wanted to remember the sentence: \"I need some space, but I still care about you.\" for a conversation with their bro\n\n  [mem_sess_004_exact_0] Session: sess_004 | Type: communication_script | Theme: friendship conflict\n    Exact: \"I felt hurt, but I want to understand what happened.\"\n    Summary: User planned to say: \"I felt hurt, but I want to understand what happened.\" to a friend.\n\n  [mem_sess_007_exact_0] Session: sess_007 | Type: communication_script | Theme: manager conversation\n    Exact: \"I'd like to understand how I can grow from here.\"\n    Summary: User wanted to use the sentence: \"I'd like to understand how I can grow from here.\" in a performance review conversation\n\n  [mem_sess_009_exact_1] Session: sess_009 | Type: coping_strategy | Theme: emotional regulation\n    Exact: \"walk for ten minutes, then write three calm bullet points before the review\"\n    Summary: User planned to walk for ten minutes, then write three calm bullet points before the review\n\n  [mem_sess_008_summary] Session: sess_008 | Type: session_summary | Theme: productivity pressure\n    Summary: User described comparing themselves to others online and feeling behind and inadequate. We explored curating their feed \n\n  [mem_sess_005_summary] Session: sess_005 | Type: session_summary | Theme: self-criti"
+    },
+    {
+      "role": "user",
+      "content": "USER MESSAGE:\nDo you remember me comparing myself to others online ?"
+    }
+  ]
+}

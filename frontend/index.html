@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentra Baseline Chat</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- App header: title, status subtitle, and memory toggle -->
+        <header class="header">
+            <h1>Mentra Chat</h1>
+            <p class="subtitle" id="subtitle">No memory enabled yet</p>
+            <div class="memory-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="memory-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="memory-label">Memory Mode</span>
+            </div>
+        </header>
+
+        <!-- Main chat transcript area; messages are appended here dynamically -->
+        <div class="chat-window" id="chat-window">
+            <!-- Messages will appear here -->
+        </div>
+
+        <!-- Message composer: text input + send button -->
+        <div class="input-area">
+            <input
+                type="text"
+                id="message-input"
+                placeholder="Type your message..."
+                autocomplete="off"
+            />
+            <button id="send-btn">Send</button>
+        </div>
+
+        <!-- Session controls for starting/resetting chats -->
+        <div class="controls">
+            <button id="new-session-btn" class="control-btn">New Session</button>
+            <button id="new-session-memory-btn" class="control-btn memory">New Session (Memory)</button>
+            <button id="reset-btn" class="control-btn danger">Reset</button>
+        </div>
+
+        <!-- Visual separator between chat controls and simulator tooling -->
+        <hr class="divider">
+
+        <!-- Re-engagement notification simulator used for debugging/demo flows -->
+        <section class="notification-simulator">
+            <h2>Notification Simulator</h2>
+            <p class="sim-desc">Simulate what push notification the re-engagement engine would send.</p>
+
+            <div class="sim-form">
+                <label>Days since last session</label>
+                <input type="number" id="sim-days" value="3" min="0" max="30">
+
+                <label>Emotion at close</label>
+                <select id="sim-emotion">
+                    <option value="anxiety">Anxiety</option>
+                    <option value="sadness">Sadness</option>
+                    <option value="overwhelm">Overwhelm</option>
+                    <option value="shame">Shame</option>
+                    <option value="loneliness">Loneliness</option>
+                    <option value="uncertainty">Uncertainty</option>
+                    <option value="hopefulness">Hopefulness</option>
+                    <option value="relief">Relief</option>
+                    <option value="neutral">Neutral</option>
+                </select>
+
+                <label>Notifications sent (last 7 days)</label>
+                <input type="number" id="sim-fatigue" value="0" min="0" max="5">
+
+                <label><input type="checkbox" id="sim-consent" checked> Notifications enabled</label>
+                <label><input type="checkbox" id="sim-llm"> Use LLM for copy</label>
+
+                <button id="sim-run-btn" class="control-btn memory">Simulate Notification</button>
+            </div>
+
+            <div id="sim-result" class="sim-result hidden">
+                <div class="sim-status" id="sim-status"></div>
+                <div class="sim-card" id="sim-card">
+                    <div class="sim-icon">🔔</div>
+                    <div class="sim-content">
+                        <div class="sim-title">Mentra</div>
+                        <div class="sim-body" id="sim-body"></div>
+                    </div>
+                </div>
+                <pre class="sim-json" id="sim-json"></pre>
+            </div>
+        </section>
+    </div>
+
+    <!-- Frontend application logic -->
+    <script src="/static/app.js"></script>
+</body>
+</html>

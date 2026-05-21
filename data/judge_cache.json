@@ -1,0 +1,200 @@
+{
+  "347e34b4ff82d159f03602f8f9029dd2": {
+    "use_memory": true,
+    "selected_memory_id": "mem_sess_008_summary",
+    "selected_memory_ids": [
+      "mem_sess_008_summary"
+    ],
+    "supporting_memory_ids": [
+      "mem_sess_005_summary"
+    ],
+    "relevance": "high",
+    "confidence": 0.95,
+    "detail_level_recommendation": "summary_level",
+    "answer_basis": "The user is asking about a specific pattern of behavior (comparing themselves to others online). Two session summaries document this topic: Session 8 (which mentions setting time limits and unfollowing) and Session 5 (which mentions feeling ashamed after seeing peers' updates).",
+    "reason": "The user is explicitly asking about the topic of comparing themselves to others online. Session 8 summary directly addresses the comparison behavior and the strategies discussed. Session 5 provides additional relevant context regarding the user's emotional experience (shame) associated with the same behavior.",
+    "rejected_memories": [
+      {
+        "memory_id": "mem_sess_003_exact_0",
+        "reason": "Unrelated topic: family boundaries."
+      },
+      {
+        "memory_id": "mem_sess_004_exact_0",
+        "reason": "Unrelated topic: friendship conflict."
+      },
+      {
+        "memory_id": "mem_sess_007_exact_0",
+        "reason": "Unrelated topic: manager conversation."
+      },
+      {
+        "memory_id": "mem_sess_009_exact_1",
+        "reason": "Unrelated topic: performance review strategy."
+      },
+      {
+        "memory_id": "mem_sess_008_exact_1",
+        "reason": "This is a grounding phrase, not the topic of comparison itself."
+      },
+      {
+        "memory_id": "mem_sess_011_exact_1",
+        "reason": "Unrelated topic: sleep hygiene."
+      }
+    ],
+    "judge_status": "success",
+    "fallback_used": false,
+    "raw_model_output": "{\n  \"use_memory\": true,\n  \"selected_memory_id\": \"mem_sess_008_summary\",\n  \"selected_memory_ids\": [\n    \"mem_sess_008_summary\"\n  ],\n  \"supporting_memory_ids\": [\n    \"mem_sess_005_summary\"\n  ],\n  \"relevance\": \"high\",\n  \"confidence\": 0.95,\n  \"detail_level_recommendation\": \"summary_level\",\n  \"answer_basis\": \"The user is asking about a specific pattern of behavior (comparing themselves to others online). Two session summaries document this topic: Session 8 (which mentions setting time limits and unfollowing) and Session 5 (which mentions feeling ashamed after seeing peers' updates).\",\n  \"reason\": \"The user is explicitly asking about the topic of comparing themselves to others online. Session 8 summary directly addresses the comparison behavior and the strategies discussed. Session 5 provides additional relevant context regarding the user's emotional experience (shame) associated with the same behavior.\",\n  \"rejected_memories\": [\n    {\n      \"memory_id\": \"mem_sess_003_exact_0\",\n      \"reason"
+  },
+  "06a8b530bc67726b874d17d90d9ec59e": {
+    "use_memory": true,
+    "selected_memory_id": "mem_sess_011_exact_1",
+    "selected_memory_ids": [
+      "mem_sess_011_exact_1"
+    ],
+    "supporting_memory_ids": [],
+    "relevance": "high",
+    "confidence": 0.9,
+    "detail_level_recommendation": "topic_only",
+    "answer_basis": "The user is asking about 2AM looping thoughts/bedtime anxiety, and mem_sess_011_exact_1 contains the grounding phrase developed specifically for bedtime and sleep hygiene.",
+    "reason": "The memory explicitly addresses the 'bedtime routine' and 'sleep hygiene' which aligns with the user's mention of 2AM thoughts. While the other sessions are related to productivity or boundaries, mem_sess_011 is the only one topically aligned with nighttime anxiety and bedtime strategies.",
+    "rejected_memories": [
+      {
+        "memory_id": "mem_sess_008_summary",
+        "reason": "While it mentions bedtime and self-critical thoughts, it focuses on productivity pressure and comparing oneself to others online, whereas the user is asking about a specific grounding resource for late-night rumination."
+      },
+      {
+        "memory_id": "mem_sess_003_summary",
+        "reason": "Mentions sleep hygiene but is primarily focused on family boundaries."
+      },
+      {
+        "memory_id": "mem_sess_009_summary",
+        "reason": "Related to performance review anxiety, not 2AM ruminating."
+      }
+    ],
+    "judge_status": "success",
+    "fallback_used": false,
+    "raw_model_output": "{\n  \"use_memory\": true,\n  \"selected_memory_id\": \"mem_sess_011_exact_1\",\n  \"selected_memory_ids\": [\"mem_sess_011_exact_1\"],\n  \"supporting_memory_ids\": [],\n  \"relevance\": \"high\",\n  \"confidence\": 0.9,\n  \"detail_level_recommendation\": \"topic_only\",\n  \"answer_basis\": \"The user is asking about 2AM looping thoughts/bedtime anxiety, and mem_sess_011_exact_1 contains the grounding phrase developed specifically for bedtime and sleep hygiene.\",\n  \"reason\": \"The memory explicitly addresses the 'bedtime routine' and 'sleep hygiene' which aligns with the user's mention of 2AM thoughts. While the other sessions are related to productivity or boundaries, mem_sess_011 is the only one topically aligned with nighttime anxiety and bedtime strategies.\",\n  \"rejected_memories\": [\n    {\n      \"memory_id\": \"mem_sess_008_summary\",\n      \"reason\": \"While it mentions bedtime and self-critical thoughts, it focuses on productivity pressure and comparing oneself to others online, whereas the user is asking about a s"
+  },
+  "5196a87667d88962dece18b146d26e75": {
+    "use_memory": true,
+    "selected_memory_id": "mem_sess_004_summary",
+    "selected_memory_ids": [
+      "mem_sess_004_summary"
+    ],
+    "supporting_memory_ids": [
+      "mem_sess_004_exact_0"
+    ],
+    "relevance": "high",
+    "confidence": 0.95,
+    "detail_level_recommendation": "summary_level",
+    "answer_basis": "The user is asking about the friendship conversation discussed in sess_004, which involves a specific sentence they wanted to use.",
+    "reason": "The user is asking about navigating a difficult conversation with a friend. Memory mem_sess_004_summary directly addresses this, and mem_sess_004_exact_0 provides the specific sentence they planned to use during that interaction.",
+    "rejected_memories": [
+      {
+        "memory_id": "mem_sess_003_exact_0",
+        "reason": "Unrelated topic (family boundaries)."
+      },
+      {
+        "memory_id": "mem_sess_003_summary",
+        "reason": "Unrelated topic (family boundaries)."
+      },
+      {
+        "memory_id": "mem_sess_007_exact_0",
+        "reason": "Unrelated topic (manager/performance review)."
+      },
+      {
+        "memory_id": "mem_sess_008_exact_1",
+        "reason": "Unrelated topic (productivity pressure)."
+      },
+      {
+        "memory_id": "mem_sess_011_exact_1",
+        "reason": "Unrelated topic (sleep hygiene)."
+      },
+      {
+        "memory_id": "mem_sess_004_km_2",
+        "reason": "Summary memory is more comprehensive for a 'what did we discuss' question."
+      }
+    ],
+    "judge_status": "success",
+    "fallback_used": false,
+    "raw_model_output": "{\n  \"use_memory\": true,\n  \"selected_memory_id\": \"mem_sess_004_summary\",\n  \"selected_memory_ids\": [\n    \"mem_sess_004_summary\"\n  ],\n  \"supporting_memory_ids\": [\n    \"mem_sess_004_exact_0\"\n  ],\n  \"relevance\": \"high\",\n  \"confidence\": 0.95,\n  \"detail_level_recommendation\": \"summary_level\",\n  \"answer_basis\": \"The user is asking about the friendship conversation discussed in sess_004, which involves a specific sentence they wanted to use.\",\n  \"reason\": \"The user is asking about navigating a difficult conversation with a friend. Memory mem_sess_004_summary directly addresses this, and mem_sess_004_exact_0 provides the specific sentence they planned to use during that interaction.\",\n  \"rejected_memories\": [\n    {\n      \"memory_id\": \"mem_sess_003_exact_0\",\n      \"reason\": \"Unrelated topic (family boundaries).\"\n    },\n    {\n      \"memory_id\": \"mem_sess_003_summary\",\n      \"reason\": \"Unrelated topic (family boundaries).\"\n    },\n    {\n      \"memory_id\": \"mem_sess_007_exact_0\",\n      \"reason\": \"Unr"
+  },
+  "bc7e765551afa8492d8a9955e20e6e1e": {
+    "use_memory": true,
+    "selected_memory_id": "mem_sess_004_exact_0",
+    "selected_memory_ids": [
+      "mem_sess_004_exact_0"
+    ],
+    "supporting_memory_ids": [
+      "mem_sess_004_summary"
+    ],
+    "relevance": "high",
+    "confidence": 1.0,
+    "detail_level_recommendation": "exact_value",
+    "answer_basis": "The user is asking about a planned script/sentence from the most recently discussed session (sess_004: friendship conflict).",
+    "reason": "Per rule 15, because the user is asking a follow-up question about a specific sentence and there is a recently discussed session (sess_004), I must prefer the memory from that session. mem_sess_004_exact_0 explicitly contains the sentence the user planned to say.",
+    "rejected_memories": [
+      {
+        "memory_id": "mem_sess_003_exact_0",
+        "reason": "Not the most recently discussed session."
+      },
+      {
+        "memory_id": "mem_sess_007_exact_0",
+        "reason": "Not the most recently discussed session."
+      },
+      {
+        "memory_id": "mem_sess_009_exact_1",
+        "reason": "Not a communication script/sentence; not the most recently discussed session."
+      },
+      {
+        "memory_id": "mem_sess_008_exact_1",
+        "reason": "Not a communication script/sentence; not the most recently discussed session."
+      }
+    ],
+    "judge_status": "success",
+    "fallback_used": false,
+    "raw_model_output": "{\n  \"use_memory\": true,\n  \"selected_memory_id\": \"mem_sess_004_exact_0\",\n  \"selected_memory_ids\": [\n    \"mem_sess_004_exact_0\"\n  ],\n  \"supporting_memory_ids\": [\n    \"mem_sess_004_summary\"\n  ],\n  \"relevance\": \"high\",\n  \"confidence\": 1.0,\n  \"detail_level_recommendation\": \"exact_value\",\n  \"answer_basis\": \"The user is asking about a planned script/sentence from the most recently discussed session (sess_004: friendship conflict).\",\n  \"reason\": \"Per rule 15, because the user is asking a follow-up question about a specific sentence and there is a recently discussed session (sess_004), I must prefer the memory from that session. mem_sess_004_exact_0 explicitly contains the sentence the user planned to say.\",\n  \"rejected_memories\": [\n    {\n      \"memory_id\": \"mem_sess_003_exact_0\",\n      \"reason\": \"Not the most recently discussed session.\"\n    },\n    {\n      \"memory_id\": \"mem_sess_007_exact_0\",\n      \"reason\": \"Not the most recently discussed session.\"\n    },\n    {\n      \"memory_id\": \"mem_sess_0"
+  },
+  "e4034aebe01e8cde546683ab979eff47": {
+    "use_memory": true,
+    "selected_memory_id": "mem_sess_005_summary",
+    "selected_memory_ids": [
+      "mem_sess_005_summary"
+    ],
+    "supporting_memory_ids": [
+      "mem_sess_005_km_2"
+    ],
+    "relevance": "high",
+    "confidence": 0.95,
+    "detail_level_recommendation": "summary_level",
+    "answer_basis": "Remind the user of the session where we explored feelings of shame regarding an unfinished project and the goal of focused work without judgment.",
+    "reason": "Memory mem_sess_005_summary explicitly describes the user feeling ashamed for not finishing a project, which directly matches the user's recall question. mem_sess_005_km_2 provides the specific plan/strategy discussed during that same context.",
+    "rejected_memories": [
+      {
+        "memory_id": "mem_sess_009_exact_1",
+        "reason": "Topically about performance review preparation, not the specific feeling of shame regarding an unfinished project discussed in session 5."
+      },
+      {
+        "memory_id": "mem_sess_007_exact_0",
+        "reason": "Topically about a performance review communication script, not the shame about unfinished work."
+      },
+      {
+        "memory_id": "mem_sess_003_exact_0",
+        "reason": "Unrelated topic (family boundaries)."
+      },
+      {
+        "memory_id": "mem_sess_004_exact_0",
+        "reason": "Unrelated topic (friendship conflict)."
+      },
+      {
+        "memory_id": "mem_sess_008_exact_1",
+        "reason": "Unrelated topic (productivity grounding phrase)."
+      },
+      {
+        "memory_id": "mem_sess_011_exact_1",
+        "reason": "Unrelated topic (sleep hygiene)."
+      }
+    ],
+    "judge_status": "success",
+    "fallback_used": false,
+    "raw_model_output": "{\n  \"use_memory\": true,\n  \"selected_memory_id\": \"mem_sess_005_summary\",\n  \"selected_memory_ids\": [\"mem_sess_005_summary\"],\n  \"supporting_memory_ids\": [\"mem_sess_005_km_2\"],\n  \"relevance\": \"high\",\n  \"confidence\": 0.95,\n  \"detail_level_recommendation\": \"summary_level\",\n  \"answer_basis\": \"Remind the user of the session where we explored feelings of shame regarding an unfinished project and the goal of focused work without judgment.\",\n  \"reason\": \"Memory mem_sess_005_summary explicitly describes the user feeling ashamed for not finishing a project, which directly matches the user's recall question. mem_sess_005_km_2 provides the specific plan/strategy discussed during that same context.\",\n  \"rejected_memories\": [\n    {\n      \"memory_id\": \"mem_sess_009_exact_1\",\n      \"reason\": \"Topically about performance review preparation, not the specific feeling of shame regarding an unfinished project discussed in session 5.\"\n    },\n    {\n      \"memory_id\": \"mem_sess_007_exact_0\",\n      \"reason\": \"Top"
+  }
+}
